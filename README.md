@@ -1,6 +1,6 @@
 # Movie App (React Native + Expo + TMDB)
 
-A modern **movie discovery** experience built with **React Native**, **Expo Router**, **NativeWind**, and the **TMDB API**. The app helps users quickly explore trending and latest movies, run fast keyword searches, and dive into a rich details view that surfaces ratings, votes, genres, budgets, revenue, and production information. Under the hood it uses **Firebase/Firestore** to track search activity and rank the most popular titles, giving the home screen a data-driven “Popular movies” section.
+A modern movie discovery experience built with **React Native**, **Expo Router**, **NativeWind**, and the **TMDB API**. The app helps users quickly explore trending and latest movies, run fast keyword searches, and dive into a rich details view that surfaces ratings, votes, genres, budgets, revenue, and production information. Under the hood it uses **Firebase/Firestore** to track search activity and rank the most popular titles, giving the home screen a data-driven “Popular movies” section.
 
 ## Features
 
