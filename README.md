@@ -1,54 +1,80 @@
-<<<<<<< HEAD
-# Welcome to your Expo app 👋
+# Movie App (Expo + TMDB)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern **movie discovery** app built with **Expo Router**, **NativeWind**, and **TMDB**. Browse trending titles, search movies, and open a rich details page with ratings and metadata.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Discover movies**: Home feed with a “Latest movies” grid (TMDB discover by popularity).
+- **Popular carousel**: “Popular movies” is powered by **Firebase/Firestore** top searched titles.
+- **Search**: Debounced movie search (1s delay) using TMDB search API.
+- **Movie details**: Poster, release year, runtime, rating + vote count, overview, genres, budget, revenue, production companies.
+- **Routing**: File-based navigation with Expo Router (`app/(tabs)` + `app/movie/[id]`).
+- **UI**: Custom bottom tabs + modern dark theme styling via NativeWind.
 
-   ```bash
-   npm install
-   ```
+## Screenshots
 
-2. Start the app
+<p align="center">
+  <img src="assets/project_screenshots/WhatsApp%20Image%202026-02-25%20at%201.09.36%20AM.jpeg" width="240" />
+  <img src="assets/project_screenshots/WhatsApp%20Image%202026-02-25%20at%201.09.37%20AM.jpeg" width="240" />
+  <img src="assets/project_screenshots/WhatsApp%20Image%202026-02-25%20at%201.09.37%20AM%20%281%29.jpeg" width="240" />
+</p>
 
-   ```bash
-   npx expo start
-   ```
+<p align="center">
+  <img src="assets/project_screenshots/WhatsApp%20Image%202026-02-25%20at%201.09.37%20AM%20%282%29.jpeg" width="240" />
+  <img src="assets/project_screenshots/WhatsApp%20Image%202026-02-25%20at%201.09.37%20AM%20%283%29.jpeg" width="240" />
+  <img src="assets/project_screenshots/WhatsApp%20Image%202026-02-25%20at%201.09.37%20AM%20%284%29.jpeg" width="240" />
+</p>
 
-In the output, you'll find options to open the app in a
+## Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Expo SDK**: ~54
+- **React Native**: 0.81
+- **Navigation**: Expo Router
+- **Styling**: NativeWind (Tailwind CSS)
+- **Backend**: Firebase (Firestore) for search-count ranking
+- **Movie data**: TMDB API
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Getting Started
 
-## Get a fresh project
-
-When you're ready, run:
+### 1) Install dependencies
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2) Run the app
 
-## Learn more
+```bash
+npm run start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Helpful shortcuts:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm run android
+npm run ios
+npm run web
+```
 
-## Join the community
+## Configuration
 
-Join our community of developers creating universal apps.
+This project uses TMDB + Firebase and currently keeps credentials in code.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-=======
-# Movie_Mobile_App
->>>>>>> 47e0868a29e6c174dc1e2ad7949ff25734e9caff
+- **TMDB**: Update `services/movieService.ts` → `TMDB_CONFIG.headers.Authorization` with your own TMDB Bearer token.
+- **Firebase**: Update `services/firebase.ts` with your own Firebase project config if needed.
+
+## Project Structure
+
+- `app/(tabs)`: Home, Search, Save, Profile tabs
+- `app/movie/[id]`: Movie details screen
+- `services/movieService.ts`: TMDB requests + Firestore ranking logic
+- `components/`: Movie cards
+- `assets/`: Icons, images, screenshots
+
+## EAS Build (optional)
+
+Build profiles are defined in `eas.json` (`development`, `preview`, `production`).
+
+## License
+
+MIT (or update this section if you prefer a different license).
