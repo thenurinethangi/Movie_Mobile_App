@@ -74,7 +74,3 @@ This project uses TMDB + Firebase and currently keeps credentials in code.
 ## EAS Build (optional)
 
 Build profiles are defined in `eas.json` (`development`, `preview`, `production`).
-
-## License
-
-MIT (or update this section if you prefer a different license).
